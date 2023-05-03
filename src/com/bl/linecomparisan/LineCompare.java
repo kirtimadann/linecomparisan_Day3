@@ -2,20 +2,24 @@ package com.bl.linecomparisan;
 
 public class LineCompare {
 
-
-    static boolean callEqualsMethod(String line1, String line2){
+    static boolean callEqualsMethod(String line1, String line2) {
         System.out.print("RESULT OF equals method --> ");
         return line1.equals(line2);
+    }
+
+    static int callCompareToMethod(String line1, String line2) {
+        System.out.print("RESULT OF compareTo method --> ");
+        return line1.compareTo(line2);
     }
 
     public static void main(String[] args) {
         System.out.println("LINE COMPARISON CODE");
 
-        double fX1 = 12, fX2 = 7;
-        double fY1 = 7, fY2 = 9;
+        double fX1 = 2, fX2 = 4;
+        double fY1 = 6, fY2 = 8;
 
-        double sX1 = 11, sX2 = 32;
-        double sY1 = 16, sY2 = 17;
+        double sX1 = 1, sX2 = 3;
+        double sY1 = 7, sY2 = 9;
 
         double fxValueOfSquare = Math.pow((fX2 - fX1), 2);
         double fyValueofSquare = Math.pow((fY2 - fY1), 2);
@@ -36,5 +40,14 @@ public class LineCompare {
             System.out.println("Lines are equal");
         }
 
+        int compareToResult = callCompareToMethod(line1, line2);
+        if (compareToResult > 0) {
+            System.out.println("first line is greater than second line");
+        } else if (compareToResult < 0) {
+            System.out.println("second line is greater than first line");
+        } else if (compareToResult == 0) {
+            System.out.println("Both lines are equal");
+        }
 
-    }}
+    }
+}
